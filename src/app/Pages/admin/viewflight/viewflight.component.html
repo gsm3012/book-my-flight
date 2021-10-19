@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-adminsidebar></app-adminsidebar>
+        </div>
+        <div class="col-10 text-center">
+            <div class="text-left">
+                <h2>View Single Flight</h2>
+            </div>
+            <hr>
+            <form (ngSubmit)="fetchFlight()" class="mt-3">
+                <mat-form-field appearance="fill" class="width">
+                    <mat-label>Flight Number</mat-label>
+                    <input name="flightNumber" [(ngModel)]="flightNumber"
+                    matInput placeholder="Flight Number">
+                </mat-form-field>
+                <div>
+                    <button type="submit" mat-stroked-button color="warn" class="mr-2">Search</button>
+                    <button type="reset" mat-stroked-button color="warn" class="ml-2">Cancel</button>
+                </div>
+            </form>
+
+            <div class="container mt-5">
+                <mat-card>
+                    <table class="table table-striped">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Flight Number</th>
+                                <th>AIrline Name</th>
+                                <th>Schedule Days</th>
+                                <th>Flight timing</th>
+                                <th>Ticket Cost</th>
+                                <th>Food Type</th>
+                            </tr>
+                        </thead>       
+                        <tbody>
+                            <tr>
+                                <td>{{flight.flightNumber}}</td>
+                                <td>{{flight.flightAirline}}</td>
+                                <td>{{flight.scheduleDays}}</td>
+                                <td>{{flight.flightTime}}</td>
+                                <td>{{flight.ticketCost}}</td>
+                                <td>{{flight.meal}}</td>
+                            </tr>
+                        </tbody>
+                      </table>                     
+                </mat-card>
+                <div class="mt-5 text-right">
+                    <button mat-stroked-button routerLink="/admin/airline/flight/update/{{flight.flightNumber}}" color="warn" class="mr-1">Update</button>
+                    <button mat-stroked-button (click)="deleteFLight(flight.flightNumber)" color="warn" class="ml-1">Delete</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

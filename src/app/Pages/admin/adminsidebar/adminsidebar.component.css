@@ -1,0 +1,13 @@
+.menu{
+    text-align: center;
+    background-color: black;
+    border-radius: 5%;
+    color: rgb(255, 68, 0);
+}
+
+.submenu{
+    text-align: center;
+    background-color:lightgray;
+    border-radius: 5%;
+    color: rgb(255, 68, 0);
+}

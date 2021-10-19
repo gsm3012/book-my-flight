@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="col-6 offset-3">
+        <mat-card class="shadow">          
+            <div class="row, text-center">
+                <mat-icon color="warn">group_add</mat-icon>
+                <h2>Register Here</h2>
+            </div>
+           <hr>
+            <div class="row, text-center">
+
+                <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Name</mat-label>
+                        <input name="userName" formControlName="userName"
+                        matInput placeholder="Enter your Name">
+                        <mat-hint class="text-danger" *ngIf="userName && userName.invalid && userName.touched">Please enter valid name.</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Email</mat-label>
+                        <input name="userEmail" formControlName="userEmail" type="email" placeholder="Enter your Email" matInput>
+                        <mat-hint class="text-danger" *ngIf="userEmail && userEmail.invalid && userEmail.touched">Please enter valid email.</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Mobile Number</mat-label>
+                        <input name="userMobile" type="tel" formControlName="userMobile"
+                               matInput placeholder="Enter your Mobile Number">
+                               <mat-hint class="text-danger" *ngIf="userMobile && userMobile.invalid && userMobile.touched">Please enter valid mobile number with 10 digits.</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Password</mat-label>
+                        <input name="userPassword" type="password" [type]="hide?'password':'text'" 
+                                matInput placeholder="Enter your Password" formControlName="userPassword">
+                        <mat-icon matSuffix style="cursor:pointer;" (click)="hide=!hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
+                        <mat-hint class="text-danger" *ngIf="userPassword && userPassword.invalid && userPassword.touched">Please enter valid password min 8 charecters required.</mat-hint>
+                    </mat-form-field>
+                    <hr>
+
+                    <div>
+                        <button type="submit" [disabled]="registerForm.invalid" mat-raised-button class="underline fullwidtth mb-1 bg-dark text-white ">Done</button>
+                        <button type="reset" color="warn" mat-raised-button class="underline mt-1 text-white fullwidtth">Cancel</button>
+                    </div>
+
+                </form>
+
+
+
+
+                <!-- <form (ngSubmit)="submitForm();">
+                    
+                    <mat-form-field appearance="outline" required class="fullwidtth">
+                        <mat-label>Enter your Name</mat-label>
+                        <input [(ngModel)]="user.userName"
+                        name="userName" 
+                        matInput placeholder="Enter your Name">
+                        <mat-hint class="text-danger">{{error}}</mat-hint>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Email</mat-label>
+                        <input [(ngModel)]="user.userEmail" name="userEmail" type="email" matInput placeholder="Enter your Email">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Mobile Number</mat-label>
+                        <input [(ngModel)]="user.userMobile" name="userMobile" type="tel" pattern=[0-9]{10} #mobile="ngModel"
+                               matInput placeholder="Enter your Mobile Number">
+                               <mat-hint class="text-danger" *ngIf="mobile.errors?.pattern">"Enter Valid 10 digits mobile number"</mat-hint>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Password</mat-label>
+                        <input [(ngModel)]="user.userPassword" name="userPassword" type="password" [type]="hide?'password':'text'" matInput placeholder="Enter your Password">
+                        <mat-icon matSuffix style="cursor:pointer;" (click)="hide=!hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
+                    </mat-form-field>
+                    <hr>
+
+                    <div>
+                        <button type="submit" mat-raised-button class="underline fullwidtth mb-1 bg-dark text-white ">Done</button>
+                        <button type="reset" mat-raised-button class="underline fullwidtth text-dark mt-1">Cancel</button>
+                    </div>
+                </form> -->
+            </div>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-adminsidebar></app-adminsidebar>
+        </div>
+        <div class="col-10">
+            <div class="text-center">
+                <h2>All Flights</h2>
+            </div>
+            <hr>
+            <div class="container table-responsive">
+                <mat-card>
+                    <table class="table table-striped">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Flight Number</th>
+                                <th>AIrline Name</th>
+                                <th>Schedule Days</th>
+                                <th>Flight timing</th>
+                                <th>Ticket Cost</th>
+                                <th>Food Type</th>
+                            </tr>
+                        </thead>       
+                        <tbody>
+                            <tr class="table-secondary" *ngFor="let flight of flights">
+                                <td>{{flight.flightNumber}}</td>
+                                <td>{{flight.flightAirline}}</td>
+                                <td>{{flight.scheduleDays}}</td>
+                                <td>{{flight.flightTime}}</td>
+                                <td>{{flight.ticketCost}}</td>
+                                <td>{{flight.meal}}</td>
+                            </tr>
+                        </tbody>
+                      </table>                     
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

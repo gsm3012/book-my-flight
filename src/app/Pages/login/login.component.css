@@ -1,0 +1,16 @@
+.fullwidtth{
+    width:100%;
+}
+
+.underline{
+    text-decoration: none;
+    color:white;
+  }
+
+  .shadow{
+    box-shadow: 30px, 30px gray;
+  }
+
+  .height{
+     margin-top:20%; 
+  }

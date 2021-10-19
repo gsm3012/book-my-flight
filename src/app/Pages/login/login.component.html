@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="col-4 offset-4">
+        <mat-card class="shadow height">
+            <div class="row, text-center">
+                <mat-icon color="warn">how_to_reg</mat-icon>
+                <h1>Log In</h1>
+            </div>
+            <hr>
+            <div class="row, text-center">
+                <form (ngSubmit)="formLogin()">                   
+                    
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Email</mat-label>
+                        <input matInput placeholder="Enter your Email" name="userName" [(ngModel)]="user.userName">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="fullwidtth">
+                        <mat-label>Enter your Password</mat-label>
+                        <input type="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Enter your Password"
+                                name="userPassword" [(ngModel)]="user.userPassword">
+                        <mat-icon style="cursor: pointer;" matSuffix (click)="hide=!hide">{{hide?'visibility_off':'visibility'}}</mat-icon>
+                    </mat-form-field>
+
+                    <div>
+                        <button type="submit" mat-raised-button class="underline fullwidtth mb-1 bg-dark text-white">Login</button>
+                        <button type="reset" color="warn" mat-raised-button class="underline mt-1 text-white fullwidtth">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</div>

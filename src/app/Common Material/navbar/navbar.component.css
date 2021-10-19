@@ -1,0 +1,16 @@
+.whitecolor{
+    color:white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.underline{
+  text-decoration: none;
+  color:white;
+}
+
+.shadow{
+  box-shadow: 10px, 10px gray;
+}
